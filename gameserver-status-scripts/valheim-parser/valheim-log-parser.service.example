@@ -1,0 +1,22 @@
+[Unit]
+Description=Valheim Log Parser Service
+# Stellt sicher, dass Docker läuft, falls der Docker-Modus verwendet wird.
+After=network.target docker.service
+
+[Service]
+# Ersetzen Sie die Platzhalter mit den korrekten Pfaden
+ExecStart=<PFAD ZUR SCRIPT UND PYTHON UMGEBUNG>/venv/bin/python3 <PFAD ZUR SCRIPT UND PYTHON UMGEBUNG>/valheim_log_parser.py
+WorkingDirectory=<PFAD ZUR SCRIPT UND PYTHON UMGEBUNG>
+
+StandardOutput=journal
+StandardError=journal
+Restart=always
+
+# Ersetzen Sie 'valheim' mit dem Benutzer, der das Skript ausführen soll
+User=valheim
+# Falls der Docker-Modus verwendet wird, MUSS der Benutzer Mitglied der 'docker'-Gruppe sein.
+# 'sudo usermod -aG docker valheim'
+Group=docker
+
+[Install]
+WantedBy=multi-user.target
