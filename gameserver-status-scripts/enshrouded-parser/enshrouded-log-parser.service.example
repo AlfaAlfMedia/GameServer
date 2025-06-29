@@ -1,0 +1,15 @@
+[Unit]
+Description=Enshrouded Player Tracker
+After=network.target
+
+[Service]
+ExecStart=<PFAD ZUR SCRIPT UND PYTHON UMGEBUNG>/venv/bin/python3 <PFAD ZUR SCRIPT UND PYTHON UMGEBUNG>/enshrouded_log_parser.py
+WorkingDirectory=<PFAD ZUR SCRIPT UND PYTHON UMGEBUNG>
+StandardOutput=journal
+StandardError=journal
+Restart=always
+User=enshrouded
+Group=enshrouded
+
+[Install]
+WantedBy=multi-user.target
