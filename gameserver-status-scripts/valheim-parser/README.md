@@ -88,7 +88,14 @@ Wir isolieren die Python-Abhängigkeiten, um Konflikte zu vermeiden.
     ExecStart=/home/valheim/scripts/venv/bin/python3 /home/valheim/scripts/valheim_log_parser.py
     WorkingDirectory=/home/valheim/scripts
     User=valheim
-    Group=valheim | docker
+    Group=valheim
+    ```
+    oder
+    ```ini
+    ExecStart=/home/valheim/scripts/venv/bin/python3 /home/valheim/scripts/valheim_log_parser.py
+    WorkingDirectory=/home/valheim/scripts
+    User=valheim
+    Group=docker
     ```
 
 ---
