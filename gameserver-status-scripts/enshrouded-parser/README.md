@@ -1,8 +1,8 @@
-# Player Log Parser für Enshrouded & Valheim
+# Player Log Parser für Enshrouded
 
-Dieses Projekt enthält eine Sammlung von Python-Skripten, um die Server-Logdateien von Enshrouded und Valheim live auszulesen. Die Skripte extrahieren die aktuellen Spielerdaten (Name, Rolle, etc.) und speichern sie in einer JSON-Datei. Diese JSON-Datei kann dann von einer separaten Web-API bereitgestellt werden, um sie auf einer Webseite anzuzeigen.
+Dieses Projekt enthält eine Sammlung von Python-Skripten, um die Logdateien von Gameservern live auszulesen. Die Skripte extrahieren die aktuellen Spielerdaten (Name, Rolle, etc.) und speichern sie in einer JSON-Datei. Diese JSON-Datei kann dann von einer separaten Web-API bereitgestellt werden, um sie auf einer Webseite anzuzeigen.
 
-Dieses Repository konzentriert sich auf das **Parser-Skript für Enshrouded**, das als verallgemeinerte Vorlage dient.
+Hier ist das **Parser-Skript für Enshrouded**, das als verallgemeinerte Vorlage dient.
 
 ## Features
 
@@ -49,16 +49,16 @@ Nach dem Kopieren sollten die Dateien hier liegen:
 
 Wir isolieren die Python-Abhängigkeiten in einer virtuellen Umgebung, um Konflikte zu vermeiden.
 
-1.  **Zum Benutzer wechseln:**
-    ```bash
-    sudo -i -u enshrouded
-    ```
-
-2.  **Abhängigkeiten installieren** (benötigt, falls nicht auf dem System vorhanden):
+1.  **Abhängigkeiten installieren** (benötigt, falls nicht auf dem System vorhanden):
     ```bash
     # Für Debian/Ubuntu
     sudo apt-get update
     sudo apt-get install python3-venv python3-pip -y
+    ```
+
+2.  **Zum Benutzer wechseln:** (falls nicht bereits geschehen)
+    ```bash
+    sudo -i -u enshrouded
     ```
     
 3.  **Virtuelle Umgebung erstellen** (im Skript-Verzeichnis):
@@ -67,7 +67,7 @@ Wir isolieren die Python-Abhängigkeiten in einer virtuellen Umgebung, um Konfli
     python3 -m venv venv
     ```
 
-4.  **Verlassen Sie die Benutzersitzung wieder:**
+4.  **Verlassen Sie die Benutzersitzung wieder:** (wenn enshrouded nicht Teil der sudo-Gruppe ist)
     ```bash
     exit
     ```
