@@ -1,0 +1,36 @@
+# =======================================================
+# Konfigurationsdatei für den Enshrouded Log Parser
+# =======================================================
+# Wähle den Modus: 'native' für eine direkte Logdatei oder 'docker' für einen Container.
+[main]
+mode = native
+
+# Pfad, unter dem die finale JSON-Datei gespeichert wird.
+# z.B.: output_json_path = /tmp/enshrouded_players.json
+output_json_path = /tmp/enshrouded_players.json
+
+# Pfad, unter dem das Skript seine eigenen Logs schreibt.
+# z.B.: log_file_path = /var/log/enshrouded-player.log
+log_file_path = /var/log/enshrouded-player.log
+
+# Timeout in Sekunden, nach dem ein Spieler als offline gilt, wenn keine Server-Logs mehr kommen.
+# z.B.: player_timeout_seconds = 300
+player_timeout_seconds = 300
+
+
+# =======================================================
+# Einstellungen für den 'native' Modus
+# =======================================================
+[native]
+# Der vollständige Pfad zur Logdatei des Enshrouded-Servers.
+# log_path = /home/enshrouded/enshroudedserver/logs/enshrouded_server.log
+log_path = <PFAD ZUM ENSHROUDED-SERVER>/logs/enshrouded_server.log
+
+
+# =======================================================
+# Einstellungen für den 'docker' Modus
+# =======================================================
+[docker]
+# Der genaue Name oder die ID des Docker-Containers.
+# z.B.: container_name = enshrouded-server
+container_name = <ENSHROUDED-CONTAINER-NAME>
