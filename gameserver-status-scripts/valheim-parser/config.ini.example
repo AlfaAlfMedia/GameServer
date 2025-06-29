@@ -1,0 +1,42 @@
+# =======================================================
+# Konfigurationsdatei für den Valheim Log Parser
+# =======================================================
+
+[main]
+# Wähle den Modus: 'native' für eine direkte Logdatei oder 'docker' für einen Container.
+# z.B.: mode = docker
+mode = docker
+
+# Pfad, unter dem die finale JSON-Datei gespeichert wird.
+# z.B.: output_json_path = /tmp/valheim_players.json
+output_json_path = /tmp/valheim_players.json
+
+# Pfad, unter dem dieses Skript seine eigenen Logs schreibt.
+# z.B.: log_file_path = /var/log/valheim-player.log
+log_file_path = /var/log/valheim-player.log
+
+# Pfad zur Valheim Admin-Liste für die Rollenzuweisung.
+# z.B.: admin_list_path = /home/valheim/ValheimServer/config/adminlist.txt
+admin_list_path = <PFAD ZUR VALHEIM SERVER>/config/adminlist.txt
+
+# Timeout in Sekunden, nach dem ein Spieler als offline gilt, wenn der Server keine Logs mehr sendet.
+# z.B.: player_timeout_seconds = 300
+player_timeout_seconds = 300
+
+# =======================================================
+# Einstellungen für den 'native' Modus
+# =======================================================
+[native]
+# Der vollständige Pfad zur Logdatei, die vom Valheim-Server geschrieben wird.
+# HINWEIS: Diese Datei muss oft erst durch eine Anpassung am Start-Skript erzeugt werden, z.B.:
+# ... >> /tmp/valheim_log.txt < /dev/null &
+# z.B.: log_path = /home/valheim/.steam/logs/connection_log_2456.txt
+log_path = <PFAD ZUR VALHEIM LOGDATEI>
+
+
+# =======================================================
+# Einstellungen für den 'docker' Modus
+# =======================================================
+[docker]
+# Der genaue Name oder die ID des Valheim Docker-Containers.
+container_name = <VALHEIM-CONTAINER-NAME>
